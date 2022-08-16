@@ -7,11 +7,13 @@
 .body-div {
   display: grid;
   grid-template-columns: 270px 4fr;
-  grid-template-rows: 1fr 9fr;
+  grid-template-rows: 1fr 100vh;
   grid-template-areas:
     "sidebar header"
     "sidebar main";
 }
+
+/* sidebar */
 
 .sidebar-div {
   display: flex;
@@ -64,10 +66,111 @@
   padding: 30px 0 0 0;
 }
 
+/* header */
+
 .header-div {
+  display: flex;
+  flex-direction: column;
   grid-area: header;
   background-color: white;
 }
+
+.header-upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+}
+
+.search-div {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.search-div button {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.search-div input {
+  height: 22px;
+  width: 100%;
+  border: none;
+  background-color: rgb(212, 212, 212);
+  border-radius: 100px;
+}
+
+.notification-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.notification-div button {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header-lower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px 20px 30px;
+}
+
+.header-upper img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+}
+
+.header-lower img {
+  height: 70px;
+  width: 70px;
+  border-radius: 100px;
+}
+
+.profile-div {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+}
+
+.button-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-div button {
+  color: white;
+  background-color: rgb(255, 172, 186);
+  border: none;
+  border-radius: 100px;
+  height: 34px;
+  width: 70px;
+  margin: 0 10px;
+}
+/* main */
 
 .content-div {
   grid-area: main;
