@@ -4,10 +4,14 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  min-height: 100vh;
+}
+
 .body-div {
   display: grid;
   grid-template-columns: 270px 4fr;
-  grid-template-rows: 1fr 100vh;
+  grid-template-rows: 1fr 3.7fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main";
@@ -30,6 +34,9 @@
   font-size: 20px;
   height: 50px;
   cursor: pointer;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  padding-right: 20px;
 }
 
 .sidebar-div button:hover {
@@ -104,7 +111,7 @@
   height: 22px;
   width: 100%;
   border: none;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(223, 223, 223);
   border-radius: 100px;
 }
 
@@ -173,65 +180,60 @@
 /* main */
 
 .content-div {
-  grid-area: main;
-  background-color: rgb(212, 212, 212);
+  display: grid;
+  background-color: rgb(223, 223, 223);
+  grid-template-areas:
+    "projects announcements"
+    "projects trending";
 }
 
-/* 
-  <body>
-    <div class="body-div">
-      <div class="sidebar-div">
-        <div class="logo-div">
-          <img src="" />
-          <h1>Dashboard</h1>
-        </div>
-        <div class="sidebar-list-1">
-          <button class="">Home</button>
-          <button class="">Profile</button>
-          <button class="">Messages</button>
-          <button class="">History</button>
-          <button class="">Tasks</button>
-          <button class="">Communities</button>
-        </div>
-        <div class="sidebar-list-2">
-          <button class="">Settings</button>
-          <button class="">Support</button>
-          <button class="">Privacy</button>
-        </div>
-      </div>
-      <div class="header-div">
-        <div class="header-upper">
-          <div class="search-div">
-            <button class=""></button>
-            <input type="text" />
-          </div>
-          <div class="notification-div">
-            <button class=""></button>
-            <img src="" />
-            <h3>Angelica Louise</h3>
-          </div>
-        </div>
-        <div class="header-lower">
-          <div class="profile-div">
-            <img src="" />
-            <h4>Hi there,</h4>
-            <h2>Angelica Louise (@angelicalouisee)</h2>
-          </div>
-          <div class="button-div">
-            <button>New</button>
-            <button>Upload</button>
-            <button>Share</button>
-          </div>
-        </div>
-      </div>
-      <div class="content-div">
-        <div class="projects-div">
-          <div class="project-1"></div>
-        </div>
-        <div class="announcements-div"></div>
-        <div class="trending-div"></div>
-      </div>
-    </div>
-  </body>
-</html> 
-*/
+.projects-div {
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 750px;
+}
+
+.projects-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+
+.projects-cards div {
+  background-color: white;
+  height: 100%;
+  width: 300px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.4);
+}
+
+.announcements-div {
+  margin: 20px;
+  grid-area: announcements;
+  width: 300px;
+}
+
+.announcement-card {
+  background-color: white;
+  height: 200px;
+  width: 300px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.4);
+}
+
+.trending-div {
+  margin: 20px;
+  grid-area: trending;
+}
+
+.trending-card {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.4);
+}
